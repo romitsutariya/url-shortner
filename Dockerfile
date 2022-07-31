@@ -1,4 +1,4 @@
 FROM openjdk:8-jdk-alpine
-VOLUME /tmp
-COPY target/*.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+WORKDIR /usr/scr/app
+COPY target/*.jar application.jar
+ENTRYPOINT ["java","-jar","/application.jar"]
