@@ -23,7 +23,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -DskipTests -B package --file pom.xml
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag romitsutariya/url-short:$(date +%s)  
     - name: Docker Login
